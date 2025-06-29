@@ -33,7 +33,7 @@ async def classify_leaf(image: UploadFile = File(...)):
         1: "Tizón leve",
         2: "Tizón severo"
     }
-   print(f"Predicción: {pred}, Label: {label}, Confianza: {confidence}")
+    print(f"Predicción: {pred}, Label: {label}, Confianza: {confidence}")
     return {
         "label": label,
         "clase": labels_dict.get(label, "Desconocida"),
