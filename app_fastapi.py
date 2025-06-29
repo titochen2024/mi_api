@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, UploadFile, File
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse,StreamingResponse
 import tensorflow as tf
 import numpy as np
 from PIL import Image
