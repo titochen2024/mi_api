@@ -39,6 +39,7 @@ async def classify_leaf(image: UploadFile = File(...)):
         "clase": labels_dict.get(label, "Desconocida"),
         "confidence": confidence,
         "alerta": confidence < 0.5
+        "raw_scores": pred.tolist()
     }
     
     #return {"label": label, "confidence": confidence}
