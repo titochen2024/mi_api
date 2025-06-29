@@ -13,6 +13,10 @@ seg_model = tf.keras.models.load_model('unet_segmentador_roboflow.keras')
 def preprocess_image(file, size):
     image = Image.open(file.file).convert("RGB").resize(size)
     return np.expand_dims(np.array(image) / 255.0, axis=0)
+    
+@app.get("/")
+def root():
+    return {"message": "API de hojas de papa en funcionamiento"}
 
 @app.post("/predict/classify")
 async def classify_leaf(image: UploadFile = File(...)):
